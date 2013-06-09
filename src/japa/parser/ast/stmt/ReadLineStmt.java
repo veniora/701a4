@@ -6,7 +6,7 @@ import japa.parser.ast.visitor.VoidVisitor;
 /**
  * This is the custom statement type
  */
-public class ReadLineStmt extends Statement {
+public final class ReadLineStmt extends Statement {
 
     @Override
     public <R, A> R accept(GenericVisitor<R, A> v, A arg) {

@@ -8,7 +8,7 @@ import japa.parser.ast.body.MethodDeclaration;
  * First visitor
  * Finds classes and methods and sets their scopes
  */
-public class TypingVisitor extends VoidVisitorAdapter {
+public final class TypingVisitor extends VoidVisitorAdapter {
     @Override
     public void visit(CompilationUnit n, Object arg) {
         System.out.println("visit comp unit in typing visitor");
