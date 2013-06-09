@@ -67,9 +67,9 @@ public final class TypingVisitor extends VoidVisitorAdapter {
 
     @Override
     public void visit(BlockStmt n, Object arg) {
-        LocalScope symbol = new LocalScope(currentScope);
-        currentScope = symbol;
-
+        currentScope = new LocalScope(currentScope);
+        n.setData(currentScope);
         super.visit(n, arg);
+        currentScope = currentScope.getEnclosingScope();
     }
 }
