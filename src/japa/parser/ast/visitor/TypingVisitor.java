@@ -17,13 +17,11 @@ import japa.parser.ast.symbol.MethodSymbol;
  * Create new scope
  * Add to symbol table
  * Pass data back to AST
- * Ensure the scope is correct fot the tree to continue
+ * Ensure the scope is correct for the tree to continue
  */
 public final class TypingVisitor extends VoidVisitorAdapter {
 
     Scope currentScope;
-
-    int a, b, c, d;
 
     @Override
     public void visit(CompilationUnit n, Object arg) {
