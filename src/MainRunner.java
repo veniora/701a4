@@ -36,6 +36,7 @@ public class MainRunner {
             ResolvingVisitor vRes = new ResolvingVisitor();
             tree.accept(vRes, null);
 
+            /* Print out the contents of the java file */
             DumpVisitor vDump = new DumpVisitor();
             tree.accept(vDump, null);
 

@@ -6,10 +6,12 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public abstract class BaseScope implements Scope {
-    Scope enclosingScope; // null if global (outermost) scope
-    Map<String, Symbol> symbols = new LinkedHashMap<String, Symbol>();
+    Scope enclosingScope; // current scope
+    Map<String, Symbol> symbols = new LinkedHashMap<String, Symbol>(); /* Stores all symbols at this level */
 
-    public BaseScope(Scope parent) { this.enclosingScope = parent;      }
+    public BaseScope(Scope parent) {
+        this.enclosingScope = parent;
+    }
 
     @Override
     public Symbol resolve(String name) {
@@ -17,7 +19,7 @@ public abstract class BaseScope implements Scope {
         if (s==null){
             return s;
         }
-        if (getParentScope() != null){
+        if (getParentScope() != null){    // not highest scope
             return getParentScope().resolve(name);
         }
         return null;
