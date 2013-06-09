@@ -1,0 +1,12 @@
+public class Lars {  
+
+	DEBUG void foo() {
+		int d = "";
+	}
+	DEBUG void bar() {
+		int d = 1234;
+		if (true ) {
+			print("hi");
+		}
+	} 
+} 
