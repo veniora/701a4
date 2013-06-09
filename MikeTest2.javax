@@ -1,0 +1,19 @@
+public class AgeReader{
+
+    /**
+    * Takes in the predefined variable and display string
+    * Adds an import java.util.Scanner, System.out.println(""),
+    * Scanner scanner = new Scanner();, age = scanner.nextLine();
+    */
+	public void getAgeToPredefinedString(){
+		String age;
+		readLineVariable(age, "Please enter your age to continue: ");
+		System.out.println("You said you were " + age + " years old");
+	}
+
+	public void getAgeAndInitString(){
+		readLineVariable(String age, "Please enter your age to continue: ");
+		System.out.println("You said you were " + age + " years old");
+	}
+
+}

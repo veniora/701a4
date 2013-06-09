@@ -23,6 +23,8 @@ public final class TypingVisitor extends VoidVisitorAdapter {
 
     Scope currentScope;
 
+    int a, b, c, d;
+
     @Override
     public void visit(CompilationUnit n, Object arg) {
         /* Create a global scope */

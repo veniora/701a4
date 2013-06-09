@@ -4,13 +4,6 @@ import japa.parser.ast.scope.Scope;
 
 import java.util.Map;
 
-/**
- * Created with IntelliJ IDEA.
- * User: michael
- * Date: 8/06/13
- * Time: 9:07 PM
- * To change this template use File | Settings | File Templates.
- */
 public abstract class ScopedSymbol extends Symbol implements Scope {
     protected Scope enclosingScope;
 

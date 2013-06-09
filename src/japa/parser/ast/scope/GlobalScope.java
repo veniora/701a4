@@ -7,6 +7,9 @@ public class GlobalScope extends BaseScope {
         super(null);
         define(new BuiltInTypeSymbol("int"));
         define(new BuiltInTypeSymbol("String"));
+        define(new BuiltInTypeSymbol("char"));
+        define(new BuiltInTypeSymbol("long"));
+        define(new BuiltInTypeSymbol("boolean"));
     }
     public String getScopeName() { return "global"; }
 }
