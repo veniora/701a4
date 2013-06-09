@@ -7,5 +7,5 @@ package japa.parser.ast.visitor;
  * Time: 1:31 PM
  * To change this template use File | Settings | File Templates.
  */
-public class ResolvingVisitor {
+public class ResolvingVisitor extends VoidVisitorAdapter {
 }
