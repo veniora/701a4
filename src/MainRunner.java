@@ -1,7 +1,10 @@
 import japa.parser.JavaParser;
 import japa.parser.ParseException;
 import japa.parser.ast.CompilationUnit;
+import japa.parser.ast.visitor.DefinitionVisitor;
 import japa.parser.ast.visitor.DumpVisitor;
+import japa.parser.ast.visitor.ResolvingVisitor;
+import japa.parser.ast.visitor.TypingVisitor;
 
 import java.io.*;
 
@@ -21,10 +24,22 @@ public class MainRunner {
 
 			CompilationUnit tree = JavaParser.parse(sr);
 
-			DumpVisitor visitor = new DumpVisitor();
-			tree.accept(visitor, null);
+            /* Find all of the classes and methods */
+            TypingVisitor vType = new TypingVisitor();
+            tree.accept(vType, null);
 
-            String output = visitor.getSource();
+            /* Find all variables */
+            DefinitionVisitor vDef = new DefinitionVisitor();
+            tree.accept(vDef, null);
+
+            /* Resolve symbols*/
+            ResolvingVisitor vRes = new ResolvingVisitor();
+            tree.accept(vRes, null);
+
+            DumpVisitor vDump = new DumpVisitor();
+            tree.accept(vDump, null);
+
+            String output = vDump.getSource();
             // Save to *.java file
             PrintStream out = new PrintStream(new FileOutputStream(fileOutput));
             out.flush();
