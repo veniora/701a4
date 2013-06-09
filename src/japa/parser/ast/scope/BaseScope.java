@@ -30,6 +30,7 @@ public abstract class BaseScope implements Scope {
         symbols.put(sym.name, sym);
         sym.scope = this; // track the scope in each symbol
     }
+
     @Override
     public String toString() { return symbols.keySet().toString(); }
 
